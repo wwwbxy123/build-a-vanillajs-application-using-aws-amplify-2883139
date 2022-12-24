@@ -1,26 +1,33 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-linkedinlearningampl-staging-191651-authRole",
-      "UnauthRoleArn": "arn:aws:iam::077942713113:role/amplify-linkedinlearningampl-staging-191651-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::077942713113:role/amplify-linkedinlearningampl-staging-191651-authRole",
+      "AuthRoleName": "amplify-testapp-staging-221553-authRole",
+      "UnauthRoleArn": "arn:aws:iam::340987740611:role/amplify-testapp-staging-221553-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::340987740611:role/amplify-testapp-staging-221553-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-linkedinlearningampl-staging-191651-deployment",
-      "UnauthRoleName": "amplify-linkedinlearningampl-staging-191651-unauthRole",
-      "StackName": "amplify-linkedinlearningampl-staging-191651",
-      "StackId": "arn:aws:cloudformation:us-east-1:077942713113:stack/amplify-linkedinlearningampl-staging-191651/14bbb810-c88e-11eb-b01d-0e6b672d4ae7",
-      "AmplifyAppId": "d1zbqrltb38y9k",
-      "AuthTriggerTemplateURL": ""
+      "DeploymentBucketName": "amplify-testapp-staging-221553-deployment",
+      "UnauthRoleName": "amplify-testapp-staging-221553-unauthRole",
+      "StackName": "amplify-testapp-staging-221553",
+      "StackId": "arn:aws:cloudformation:us-east-1:340987740611:stack/amplify-testapp-staging-221553/5dda5050-830f-11ed-8edd-0e7c67f970e5",
+      "AmplifyAppId": "dac656635b2p6",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-testapp-staging-221553-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "linkedinlearningamplify": {}
+        "Testapp": {},
+        "testapp78faa6d2": {}
       },
       "function": {
-        "linkedinlearningamplifyPostConfirmation": {
-          "deploymentBucketName": "amplify-linkedinlearningampl-staging-191651-deployment",
-          "s3Key": "amplify-builds/linkedinlearningamplifyPostConfirmation-4e637a51585543675144-build.zip"
+        "testapp78faa6d2PostConfirmation": {
+          "deploymentBucketName": "amplify-testapp-staging-221553-deployment",
+          "s3Key": "amplify-builds/testapp78faa6d2PostConfirmation-3443726635364b767253-build.zip"
         }
+      },
+      "api": {
+        "Testapp": {}
+      },
+      "storage": {
+        "binary": {}
       }
     }
   }

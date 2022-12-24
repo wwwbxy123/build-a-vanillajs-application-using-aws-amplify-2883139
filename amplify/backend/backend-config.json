@@ -1,26 +1,35 @@
 {
   "api": {
-    "linkedinlearningamplify": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
+    "Testapp": {
+      "dependsOn": [],
       "output": {
         "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
           "defaultAuthentication": {
-            "authenticationType": "AWS_IAM"
-          },
-          "additionalAuthenticationProviders": []
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
         }
-      }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
     }
   },
   "auth": {
-    "linkedinlearningamplify": {
+    "testapp78faa6d2": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "linkedinlearningamplifyPostConfirmation",
+          "resourceName": "testapp78faa6d2PostConfirmation",
           "triggerProvider": "Cognito",
           "attributes": [
             "Arn",
@@ -28,24 +37,43 @@
           ]
         }
       ],
-      "customAuth": false
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      }
     }
   },
   "storage": {
-    "s3f3b2bef8": {
+    "binary": {
       "service": "S3",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   },
   "function": {
-    "linkedinlearningamplifyPostConfirmation": {
+    "testapp78faa6d2PostConfirmation": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
         {
           "category": "api",
-          "resourceName": "linkedinlearningamplify",
+          "resourceName": "Testapp",
           "attributes": [
             "GraphQLAPIIdOutput"
           ]

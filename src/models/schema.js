@@ -55,18 +55,11 @@ export const schema = {
                             {
                                 "allow": "public",
                                 "operations": [
-                                    "read"
-                                ],
-                                "provider": "iam"
-                            },
-                            {
-                                "allow": "private",
-                                "operations": [
                                     "create",
                                     "update",
-                                    "delete"
-                                ],
-                                "provider": "iam"
+                                    "delete",
+                                    "read"
+                                ]
                             }
                         ]
                     }
@@ -106,8 +99,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "postAuthorId"
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": [
+                            "id"
+                        ],
+                        "targetNames": [
+                            "postAuthorId"
+                        ]
                     }
                 },
                 "createdAt": {
@@ -125,6 +123,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "postAuthorId": {
+                    "name": "postAuthorId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -141,18 +146,11 @@ export const schema = {
                             {
                                 "allow": "public",
                                 "operations": [
-                                    "read"
-                                ],
-                                "provider": "iam"
-                            },
-                            {
-                                "allow": "private",
-                                "operations": [
                                     "create",
                                     "update",
-                                    "delete"
-                                ],
-                                "provider": "iam"
+                                    "delete",
+                                    "read"
+                                ]
                             }
                         ]
                     }
@@ -162,5 +160,6 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "00de501e6a98e272e77a7565edb18b5f"
+    "codegenVersion": "3.3.2",
+    "version": "0f8c57032e093bded05bc75ae14c9259"
 };

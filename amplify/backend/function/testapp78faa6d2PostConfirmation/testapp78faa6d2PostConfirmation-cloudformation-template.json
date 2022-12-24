@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "Lambda resource stack creation using Amplify CLI",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.5.2\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "GROUP": {
       "Type": "String",
@@ -9,7 +9,7 @@
     "modules": {
       "Type": "String",
       "Default": "",
-      "Description": "Comma-delimmited list of modules to be executed by a lambda trigger. Sent to resource as an env variable."
+      "Description": "Comma-delimited list of modules to be executed by a lambda trigger. Sent to resource as an env variable."
     },
     "resourceName": {
       "Type": "String",
@@ -38,15 +38,15 @@
     "env": {
       "Type": "String"
     },
-    "apilinkedinlearningamplifyGraphQLAPIIdOutput": {
-      "Type": "String",
-      "Default": "apilinkedinlearningamplifyGraphQLAPIIdOutput"
-    },
     "deploymentBucketName": {
       "Type": "String"
     },
     "s3Key": {
       "Type": "String"
+    },
+    "apiTestappGraphQLAPIIdOutput": {
+      "Type": "String",
+      "Default": "apiTestappGraphQLAPIIdOutput"
     }
   },
   "Conditions": {
@@ -71,12 +71,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "linkedinlearningamplifyPostConfirmation",
+            "testapp78faa6d2PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "linkedinlearningamplifyPostConfirmation",
+                  "testapp78faa6d2PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -100,12 +100,12 @@
             "GROUP": {
               "Ref": "GROUP"
             },
-            "API_LINKEDINLEARNINGAMPLIFY_AUTHORTABLE_NAME": {
+            "API_TESTAPP_AUTHORTABLE_NAME": {
               "Fn::ImportValue": {
-                "Fn::Sub": "${apilinkedinlearningamplifyGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
+                "Fn::Sub": "${apiTestappGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
               }
             },
-            "API_LINKEDINLEARNINGAMPLIFY_AUTHORTABLE_ARN": {
+            "API_TESTAPP_AUTHORTABLE_ARN": {
               "Fn::Join": [
                 "",
                 [
@@ -120,14 +120,14 @@
                   ":table/",
                   {
                     "Fn::ImportValue": {
-                      "Fn::Sub": "${apilinkedinlearningamplifyGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
+                      "Fn::Sub": "${apiTestappGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
                     }
                   }
                 ]
               ]
             },
-            "API_LINKEDINLEARNINGAMPLIFY_GRAPHQLAPIIDOUTPUT": {
-              "Ref": "apilinkedinlearningamplifyGraphQLAPIIdOutput"
+            "API_TESTAPP_GRAPHQLAPIIDOUTPUT": {
+              "Ref": "apiTestappGraphQLAPIIdOutput"
             }
           }
         },
@@ -138,7 +138,7 @@
           ]
         },
         "Runtime": "nodejs14.x",
-        "Timeout": "25",
+        "Timeout": 25,
         "Code": {
           "S3Bucket": {
             "Ref": "deploymentBucketName"
@@ -155,12 +155,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "linkedinlearningamplifyPostConfirmation",
+            "testapp78faa6d2PostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "linkedinlearningamplifyPostConfirmation",
+                  "testapp78faa6d2PostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -275,7 +275,7 @@
                       ":table/",
                       {
                         "Fn::ImportValue": {
-                          "Fn::Sub": "${apilinkedinlearningamplifyGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
+                          "Fn::Sub": "${apiTestappGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
                         }
                       }
                     ]
@@ -296,7 +296,7 @@
                       ":table/",
                       {
                         "Fn::ImportValue": {
-                          "Fn::Sub": "${apilinkedinlearningamplifyGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
+                          "Fn::Sub": "${apiTestappGraphQLAPIIdOutput}:GetAtt:AuthorTable:Name"
                         }
                       },
                       "/index/*"

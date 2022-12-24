@@ -18,7 +18,7 @@ exports.handler = async (event, context, callback) => {
       _version: { N: '1' },
       _lastChangedAt: { N: `${date.getTime()}` }
     },
-    TableName: process.env.API_LINKEDINLEARNINGAMPLIFY_AUTHORTABLE_NAME
+    TableName: process.env.API_TESTAPP_AUTHORTABLE_NAME
   }
 
   try {

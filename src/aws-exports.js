@@ -3,15 +3,32 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_appsync_graphqlEndpoint": "https://5r5cdzc4m5ghjcchytqdxrpje4.appsync-api.us-east-1.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://xwcurdxrozcbbojzitljunsb7q.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
-    "aws_appsync_authenticationType": "AWS_IAM",
-    "aws_cognito_identity_pool_id": "us-east-1:5378ac10-f65d-47b3-bb95-a5ba761cbe8a",
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_appsync_apiKey": "da2-wncgtmiuyve5jpnaegvscro44e",
+    "aws_cognito_identity_pool_id": "us-east-1:d7897719-688f-4790-ad11-1adc1649ef70",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_TAIyI3L3T",
-    "aws_user_pools_web_client_id": "5ojmhod115t60d5chv1l0dhouu",
+    "aws_user_pools_id": "us-east-1_7363rdSg5",
+    "aws_user_pools_web_client_id": "2d1h0q7p10e7c5vphkd9317hnb",
     "oauth": {},
-    "aws_user_files_s3_bucket": "linkedinlearningampl1b44920422604425bcfe144b0a0191651-staging",
+    "aws_cognito_username_attributes": [],
+    "aws_cognito_social_providers": [],
+    "aws_cognito_signup_attributes": [
+        "EMAIL"
+    ],
+    "aws_cognito_mfa_configuration": "OFF",
+    "aws_cognito_mfa_types": [
+        "SMS"
+    ],
+    "aws_cognito_password_protection_settings": {
+        "passwordPolicyMinLength": 8,
+        "passwordPolicyCharacters": []
+    },
+    "aws_cognito_verification_mechanisms": [
+        "EMAIL"
+    ],
+    "aws_user_files_s3_bucket": "binary221553-staging",
     "aws_user_files_s3_bucket_region": "us-east-1"
 };
 
